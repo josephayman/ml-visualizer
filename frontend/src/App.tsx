@@ -1,14 +1,14 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
+import Canvas from './Canvas';
  
 // write a function that
 const changeColor = (key: number) => {
-  const root = document.documentElement.getElementsByClassName('cell')[key];
+  const root = document.documentElement.getElementsByClassName('cell')[key] as HTMLElement;
   root.style.backgroundColor = 'red';
 }
 
 function App() {
-  const [clicked, setClicked] = useState(0);
   return (
     <div className="App">
       BINARY DECESION TREE
@@ -17,6 +17,7 @@ function App() {
           Array(10000).fill(0).map((_, i) => <Cell key={i} number={i}/>)
         }
       </div>
+      <Canvas />
     </div>
   );
 }
